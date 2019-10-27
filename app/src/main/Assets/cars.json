@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "model": "GS",
+    "brand": "Lexus",
+    "year": 2004
+  },
+  {
+    "id": 2,
+    "model": "Accord",
+    "brand": "Honda",
+    "year": 1984
+  },
+  {
+    "id": 3,
+    "model": "Solara",
+    "brand": "Toyota",
+    "year": 2008
+  },
+  {
+    "id": 4,
+    "model": "APV",
+    "brand": "Chevrolet",
+    "year": 1993
+  },
+  {
+    "id": 5,
+    "model": "9-7X",
+    "brand": "Saab",
+    "year": 2006
+  },
+  {
+    "id": 6,
+    "model": "Optima",
+    "brand": "Kia",
+    "year": 2008
+  },
+  {
+    "id": 7,
+    "model": "Voyager",
+    "brand": "Chrysler",
+    "year": 2001
+  },
+  {
+    "id": 8,
+    "model": "2500",
+    "brand": "Ram",
+    "year": 2012
+  },
+  {
+    "id": 9,
+    "model": "Cabriolet",
+    "brand": "Volkswagen",
+    "year": 2002
+  },
+  {
+    "id": 10,
+    "model": "Altima",
+    "brand": "Nissan",
+    "year": 2002
+  },
+  {
+    "id": 11,
+    "model": "Voyager",
+    "brand": "Chrysler",
+    "year": 2002
+  },
+  {
+    "id": 12,
+    "model": "Malibu",
+    "brand": "Chevrolet",
+    "year": 2001
+  },
+  {
+    "id": 13,
+    "model": "Seville",
+    "brand": "Cadillac",
+    "year": 1995
+  },
+  {
+    "id": 14,
+    "model": "Club Wagon",
+    "brand": "Ford",
+    "year": 1996
+  },
+  {
+    "id": 15,
+    "model": "Aveo",
+    "brand": "Chevrolet",
+    "year": 2009
+  },
+  {
+    "id": 16,
+    "model": "Cordia",
+    "brand": "Mitsubishi",
+    "year": 1988
+  },
+  {
+    "id": 17,
+    "model": "Ranger",
+    "brand": "Ford",
+    "year": 2006
+  },
+  {
+    "id": 18,
+    "model": "Sebring",
+    "brand": "Chrysler",
+    "year": 2010
+  },
+  {
+    "id": 19,
+    "model": "S-Series",
+    "brand": "Saturn",
+    "year": 2000
+  },
+  {
+    "id": 20,
+    "model": "Rally Wagon G3500",
+    "brand": "GMC",
+    "year": 1996
+  },
+  {
+    "id": 21,
+    "model": "Astro",
+    "brand": "Chevrolet",
+    "year": 2004
+  },
+  {
+    "id": 22,
+    "model": "Express 2500",
+    "brand": "Chevrolet",
+    "year": 2007
+  },
+  {
+    "id": 23,
+    "model": "Mustang",
+    "brand": "Ford",
+    "year": 1980
+  },
+  {
+    "id": 24,
+    "model": "A4",
+    "brand": "Audi",
+    "year": 2006
+  },
+  {
+    "id": 25,
+    "model": "Cordia",
+    "brand": "Mitsubishi",
+    "year": 1988
+  },
+  {
+    "id": 26,
+    "model": "525",
+    "brand": "BMW",
+    "year": 2006
+  },
+  {
+    "id": 27,
+    "model": "XJ",
+    "brand": "Jaguar",
+    "year": 2009
+  },
+  {
+    "id": 28,
+    "model": "5 Series",
+    "brand": "BMW",
+    "year": 2010
+  },
+  {
+    "id": 29,
+    "model": "Lancer",
+    "brand": "Mitsubishi",
+    "year": 2001
+  },
+  {
+    "id": 30,
+    "model": "Regal",
+    "brand": "Buick",
+    "year": 1992
+  },
+  {
+    "id": 31,
+    "model": "MX-5",
+    "brand": "Mazda",
+    "year": 1995
+  },
+  {
+    "id": 32,
+    "model": "Sunfire",
+    "brand": "Pontiac",
+    "year": 2003
+  },
+  {
+    "id": 33,
+    "model": "626",
+    "brand": "Mazda",
+    "year": 2002
+  },
+  {
+    "id": 34,
+    "model": "Expedition",
+    "brand": "Ford",
+    "year": 2004
+  },
+  {
+    "id": 35,
+    "model": "TL",
+    "brand": "Acura",
+    "year": 2010
+  },
+  {
+    "id": 36,
+    "model": "MR2",
+    "brand": "Toyota",
+    "year": 1987
+  },
+  {
+    "id": 37,
+    "model": "Concorde",
+    "brand": "Chrysler",
+    "year": 1995
+  },
+  {
+    "id": 38,
+    "model": "V70",
+    "brand": "Volvo",
+    "year": 2004
+  },
+  {
+    "id": 39,
+    "model": "Uplander",
+    "brand": "Chevrolet",
+    "year": 2008
+  },
+  {
+    "id": 40,
+    "model": "Taurus",
+    "brand": "Ford",
+    "year": 2006
+  },
+  {
+    "id": 41,
+    "model": "QX",
+    "brand": "Infiniti",
+    "year": 1997
+  },
+  {
+    "id": 42,
+    "model": "200",
+    "brand": "Audi",
+    "year": 1989
+  },
+  {
+    "id": 43,
+    "model": "S60",
+    "brand": "Volvo",
+    "year": 2013
+  },
+  {
+    "id": 44,
+    "model": "6000",
+    "brand": "Pontiac",
+    "year": 1986
+  },
+  {
+    "id": 45,
+    "model": "Sportvan G30",
+    "brand": "Chevrolet",
+    "year": 1993
+  },
+  {
+    "id": 46,
+    "model": "X3",
+    "brand": "BMW",
+    "year": 2008
+  },
+  {
+    "id": 47,
+    "model": "G-Series 3500",
+    "brand": "Chevrolet",
+    "year": 1998
+  },
+  {
+    "id": 48,
+    "model": "S-Class",
+    "brand": "Mercedes-Benz",
+    "year": 1989
+  },
+  {
+    "id": 49,
+    "model": "LS",
+    "brand": "Lexus",
+    "year": 1992
+  },
+  {
+    "id": 50,
+    "model": "Altima",
+    "brand": "Nissan",
+    "year": 1993
+  },
+  {
+    "id": 51,
+    "model": "940",
+    "brand": "Volvo",
+    "year": 1995
+  },
+  {
+    "id": 52,
+    "model": "Grand Caravan",
+    "brand": "Dodge",
+    "year": 2004
+  },
+  {
+    "id": 53,
+    "model": "Prius",
+    "brand": "Toyota",
+    "year": 2011
+  },
+  {
+    "id": 54,
+    "model": "Vandura 2500",
+    "brand": "GMC",
+    "year": 1994
+  },
+  {
+    "id": 55,
+    "model": "RX-8",
+    "brand": "Mazda",
+    "year": 2011
+  },
+  {
+    "id": 56,
+    "model": "Sunfire",
+    "brand": "Pontiac",
+    "year": 1997
+  },
+  {
+    "id": 57,
+    "model": "Touareg",
+    "brand": "Volkswagen",
+    "year": 2004
+  },
+  {
+    "id": 58,
+    "model": "100",
+    "brand": "Audi",
+    "year": 1993
+  },
+  {
+    "id": 59,
+    "model": "G-Class",
+    "brand": "Mercedes-Benz",
+    "year": 2006
+  },
+  {
+    "id": 60,
+    "model": "4Runner",
+    "brand": "Toyota",
+    "year": 2008
+  }
+]
