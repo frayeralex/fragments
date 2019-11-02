@@ -1,20 +1,20 @@
 package com.github.frayeralex.fragments
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import org.json.JSONArray
 import java.io.IOException
 import java.io.InputStream
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CarDataProviderInterface, SelectCarHandlerInterface {
 
-    var carList = arrayListOf<CarModel>()
+    private var selectedCar: CarModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        initCarData()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().run {
@@ -24,10 +24,34 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initCarData() {
+    private fun isLandscape(): Boolean {
+        return resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE
+    }
+
+    private fun showDetails() {
+        if (isLandscape()) {
+            supportFragmentManager.beginTransaction().run {
+                replace(R.id.details_fragment, DetailsViewFragment())
+                commit()
+            }
+        } else {
+            supportFragmentManager.beginTransaction().run {
+                replace(R.id.content_fragment, DetailsViewFragment())
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
+
+    override fun getCurrentCar(): CarModel? {
+        return selectedCar
+    }
+
+    override fun getCarListData(): ArrayList<CarModel> {
+        val carList = arrayListOf<CarModel>()
         try {
-            val inputStream:InputStream = assets.open(CAR_JSON)
-            val string = inputStream.bufferedReader().use{it.readText()}
+            val inputStream: InputStream = assets.open(CAR_JSON)
+            val string = inputStream.bufferedReader().use { it.readText() }
 
             val jsonArray = JSONArray(string)
 
@@ -46,6 +70,18 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             println(e.message)
         }
+        return carList
+    }
+
+    fun goBack(v: View) {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStack()
+        }
+    }
+
+    override fun onCarSelect(car: CarModel) {
+        selectedCar = car
+        showDetails()
     }
 
     companion object {

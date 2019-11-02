@@ -10,12 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewFragment : Fragment() {
 
-    private lateinit var currentLayoutManagerType: LayoutManagerType
     private lateinit var recyclerView: RecyclerView
     private lateinit var layoutManager: RecyclerView.LayoutManager
     private lateinit var carList: ArrayList<CarModel>
-
-    enum class LayoutManagerType { LINEAR_LAYOUT_MANAGER }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,20 +34,18 @@ class RecyclerViewFragment : Fragment() {
 
         layoutManager = LinearLayoutManager(activity)
 
-        currentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER
+        setRecyclerViewLayoutManager()
 
-        if (savedInstanceState != null) {
-            currentLayoutManagerType = savedInstanceState
-                .getSerializable(KEY_LAYOUT_MANAGER) as LayoutManagerType
+        val handlerInterface = activity as? SelectCarHandlerInterface
+
+        if (handlerInterface != null) {
+            recyclerView.adapter = CustomAdapter(carList, handlerInterface)
         }
-        setRecyclerViewLayoutManager(currentLayoutManagerType)
-
-        recyclerView.adapter = CustomAdapter(carList)
 
         return rootView
     }
 
-    private fun setRecyclerViewLayoutManager(layoutManagerType: LayoutManagerType) {
+    private fun setRecyclerViewLayoutManager() {
         var scrollPosition = 0
 
         if (recyclerView.layoutManager != null) {
@@ -58,12 +53,7 @@ class RecyclerViewFragment : Fragment() {
                 .findFirstCompletelyVisibleItemPosition()
         }
 
-        when (layoutManagerType) {
-            RecyclerViewFragment.LayoutManagerType.LINEAR_LAYOUT_MANAGER -> {
-                layoutManager = LinearLayoutManager(activity)
-                currentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER
-            }
-        }
+        layoutManager = LinearLayoutManager(activity)
 
         with(recyclerView) {
             layoutManager = this@RecyclerViewFragment.layoutManager
@@ -72,18 +62,15 @@ class RecyclerViewFragment : Fragment() {
 
     }
 
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        savedInstanceState.putSerializable(KEY_LAYOUT_MANAGER, currentLayoutManagerType)
-        super.onSaveInstanceState(savedInstanceState)
-    }
-
     private fun initData() {
-        val mainActivity = activity as MainActivity
-        carList = mainActivity.carList
+        val provider = activity as? CarDataProviderInterface
+
+        if (provider != null) {
+            carList = provider.getCarListData()
+        }
     }
 
     companion object {
         private val TAG = "RecyclerViewFragment"
-        private val KEY_LAYOUT_MANAGER = "layoutManager"
     }
 }
