@@ -1,14 +1,22 @@
-package com.github.frayeralex.fragments
+package com.github.frayeralex.fragments.main.activities
 
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.github.frayeralex.fragments.R
+import com.github.frayeralex.fragments.main.interfaces.CarDataProviderInterface
+import com.github.frayeralex.fragments.main.fragments.DetailsViewFragment
+import com.github.frayeralex.fragments.main.fragments.RecyclerViewFragment
+import com.github.frayeralex.fragments.main.interfaces.SelectCarHandlerInterface
+import com.github.frayeralex.fragments.models.CarModel
 import org.json.JSONArray
 import java.io.IOException
 import java.io.InputStream
 
-class MainActivity : AppCompatActivity(), CarDataProviderInterface, SelectCarHandlerInterface {
+class MainActivity : AppCompatActivity(),
+    CarDataProviderInterface,
+    SelectCarHandlerInterface {
 
     private var selectedCar: CarModel? = null
 
@@ -18,34 +26,38 @@ class MainActivity : AppCompatActivity(), CarDataProviderInterface, SelectCarHan
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().run {
-                replace(R.id.content_fragment, RecyclerViewFragment())
+                replace(
+                    R.id.content_fragment,
+                    RecyclerViewFragment()
+                )
                 commit()
             }
         }
     }
 
-    private fun isLandscape(): Boolean {
-        return resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE
-    }
-
     private fun showDetails() {
-        if (isLandscape()) {
+        if (resources.getBoolean(R.bool.isLand)) {
             supportFragmentManager.beginTransaction().run {
-                replace(R.id.details_fragment, DetailsViewFragment())
+                replace(
+                    R.id.details_fragment,
+                    DetailsViewFragment()
+                )
                 commit()
             }
         } else {
             supportFragmentManager.beginTransaction().run {
-                replace(R.id.content_fragment, DetailsViewFragment())
+                replace(
+                    R.id.content_fragment,
+                    DetailsViewFragment()
+                )
                 addToBackStack(null)
                 commit()
             }
         }
     }
 
-    override fun getCurrentCar(): CarModel? {
-        return selectedCar
-    }
+    override fun getCurrentCar() = selectedCar
+
 
     override fun getCarListData(): ArrayList<CarModel> {
         val carList = arrayListOf<CarModel>()
@@ -55,7 +67,7 @@ class MainActivity : AppCompatActivity(), CarDataProviderInterface, SelectCarHan
 
             val jsonArray = JSONArray(string)
 
-            for (i in 0..(jsonArray.length() - 1)) {
+            for (i in 0 until jsonArray.length() - 1) {
                 val obj = jsonArray.getJSONObject(i)
 
                 carList.add(
